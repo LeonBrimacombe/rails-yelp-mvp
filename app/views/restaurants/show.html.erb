@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <h3><%= @restaurant.name %> </h3>
+    <%= link_to "✏️ Edit restaurant", edit_restaurant_path(@restaurant) %>
+  </div>
+  <p> <strong>Address: </strong><%= @restaurant.address %> </p>
+  <p> <strong>Phone number: </strong><%= @restaurant.phone_number %> </p>
+  <p> <strong>Category: </strong><%= @restaurant.category %> </p>
+
+  <%= link_to "🔍 View all restaurants", restaurants_path %>
+</div>
