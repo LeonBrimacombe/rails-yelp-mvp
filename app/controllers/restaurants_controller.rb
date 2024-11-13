@@ -1,6 +1,9 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+    @ratings = Review.all.map { |review| review.rating }
+    @average_ratings = @ratings.sum/@ratings.count
+    @restaurant_ratings = Review.group(:restaurant_id).sum(:rating)
   end
 
   def show
