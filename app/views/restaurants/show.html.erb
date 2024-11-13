@@ -7,6 +7,14 @@
   <p> <strong>Phone number: </strong><%= @restaurant.phone_number %> </p>
   <p> <strong>Category: </strong><%= @restaurant.category %> </p>
 
+  <% @reviews.each do |review|%>
+    <div class="shadow p-4 m-4 bg-light rounded align-items-center">
+      <p> <%= "⭐" * review.rating %> </p>
+      <p> <strong>Review: </strong><%= review.content %> </p>
+    </div>
+  <% end %>
+
+
   <%= link_to "➕ Add review", new_restaurant_review_path(@restaurant) %> <br>
   <%= link_to "🔍 View all restaurants", restaurants_path %>
 </div>
