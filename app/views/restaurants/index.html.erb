@@ -2,11 +2,18 @@
   <h3>All Restaurants</h3>
 
   <% @restaurants.each do |restaurant|%>
-    <div class="shadow p-4 m-4 bg-light rounded align-items-center">
-      <h5> <%= link_to restaurant.name, restaurant %> </h5> <br>
-      <p> <strong>Address: </strong><%= restaurant.address %> </p>
-      <p> <strong>Phone number: </strong><%= restaurant.phone_number %> </p>
-      <p> <strong>Category: </strong><%= restaurant.category %> </p>
+
+    <div class="d-flex justify-content-start shadow p-4 m-4 bg-light rounded align-items-center">
+      <div>
+        <img src=<%= restaurant.image_url %> alt="" class="img-fluid" style="width: 250px;">
+      </div>
+
+      <div class="ms-4">
+        <h5> <%= link_to restaurant.name, restaurant %> </h5> <br>
+        <p> <strong>Address: </strong><%= restaurant.address %> </p>
+        <p> <strong>Phone number: </strong><%= restaurant.phone_number %> </p>
+        <p> <strong>Category: </strong><%= restaurant.category %> </p>
+      </div>
     </div>
   <% end %>
 </div>

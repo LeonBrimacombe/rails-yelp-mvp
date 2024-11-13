@@ -1,12 +1,20 @@
 <div class="container mt-5">
-  <div class="d-flex justify-content-between">
-    <h3><%= @restaurant.name %> </h3>
-    <%= link_to "✏️ Edit restaurant", edit_restaurant_path(@restaurant) %>
+  <div class="d-flex justify-content-center">
+    <div>
+      <img src=<%= @restaurant.image_url %> alt="" class="img-fluid" style="width: 350px;">
+    </div>
+    <div class="m-4">
+      <div>
+        <h3><%= @restaurant.name %> </h3>
+        <%= link_to "✏️ Edit restaurant", edit_restaurant_path(@restaurant) %>
+      </div>
+      <div class="mt-4">
+        <p> <strong>Address: </strong><%= @restaurant.address %> </p>
+        <p> <strong>Phone number: </strong><%= @restaurant.phone_number %> </p>
+        <p> <strong>Category: </strong><%= @restaurant.category %> </p>
+      </div>
+    </div>
   </div>
-  <p> <strong>Address: </strong><%= @restaurant.address %> </p>
-  <p> <strong>Phone number: </strong><%= @restaurant.phone_number %> </p>
-  <p> <strong>Category: </strong><%= @restaurant.category %> </p>
-
   <% @reviews.each do |review|%>
     <div class="shadow p-4 m-4 bg-light rounded align-items-center">
       <p> <%= "⭐" * review.rating %> </p>
